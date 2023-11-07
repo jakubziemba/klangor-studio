@@ -9,6 +9,7 @@ const images = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg"];
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);
+  const [introEnded, setIntroEnded] = useState(false);
 
   return (
     <motion.div
@@ -25,6 +26,7 @@ export default function Slider() {
           scale: { duration: 1.4, delay: 1.6, type: "spring", bounce: 0 },
         },
       }}
+      onAnimationComplete={() => setIntroEnded(true)}
     >
       <NavPanel images={images} current={current} setCurrent={setCurrent} />
       <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
@@ -48,6 +50,38 @@ export default function Slider() {
           </motion.div>
         </AnimatePresence>
       </MotionConfig>
+      <motion.div className="absolute bottom-0 left-0 w-full bg-opacity-70 bg-gradient-to-t from-black from-[-20%] to-transparent to-[80%] p-8">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={current}
+            className="p-8 pb-6 pl-6 text-6xl  text-white"
+            transition={{
+              ease: "easeInOut",
+            }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                y: { type: "spring", bounce: 0, duration: 0.7 },
+                opacity: { duration: 0.4 },
+                delay: introEnded ? 0 : 2.8,
+              },
+            }}
+            exit={{
+              opacity: 0,
+              y: 50,
+              transition: {
+                delay: 0,
+                opacity: { duration: 0.3 },
+                y: { duration: 0.5, ease: "backOut" },
+              },
+            }}
+          >
+            {current + 1}. Project
+          </motion.h1>
+        </AnimatePresence>
+      </motion.div>
     </motion.div>
   );
 }
