@@ -27,7 +27,7 @@ export default function NavPanel({
           key={image}
           className={clsx(
             [
-              "relative h-20 w-20 cursor-pointer transition-all hover:opacity-100",
+              "relative h-20 w-20 cursor-pointer rounded-lg transition-all hover:opacity-100",
             ],
             [
               current === 0 &&
@@ -43,7 +43,7 @@ export default function NavPanel({
           onClick={() => setCurrent(index)}
         >
           <Image
-            className="block h-auto w-full p-2"
+            className="p-1.5"
             src={image}
             quality={30}
             fill
@@ -51,6 +51,8 @@ export default function NavPanel({
             sizes="(min-width: 768px) 15vw, 25vw"
             style={{
               objectFit: "cover",
+              borderRadius: "12px",
+              zIndex: -1,
             }}
           />
         </div>
