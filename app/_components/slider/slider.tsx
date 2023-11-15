@@ -5,7 +5,13 @@ import Image from "next/image";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import NavPanel from "./nav-panel";
 
-const images = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg"];
+const images = [
+  "https://res.cloudinary.com/dzyub3iba/image/upload/f_auto,q_100/v1/klangor/bxqnpuv0rcck1ekyodol",
+  "https://res.cloudinary.com/dzyub3iba/image/upload/f_auto,q_100/v1/klangor/p8exlx9vip1t3w3irbx1",
+  "https://res.cloudinary.com/dzyub3iba/image/upload/f_auto,q_100/v1/klangor/el52hgy28uhgeus6ijan",
+  "https://res.cloudinary.com/dzyub3iba/image/upload/f_auto,q_100/v1/klangor/kc9xsoo6zlsfagu3cha1",
+  "https://res.cloudinary.com/dzyub3iba/image/upload/f_auto,q_100/v1/klangor/pywrnuwpmjszloqrcm0m",
+];
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);
@@ -42,6 +48,8 @@ export default function Slider() {
               src={images[current]}
               alt="Project 1"
               fill
+              priority
+              loading="eager"
               sizes="100vw"
               style={{
                 objectFit: "cover",
