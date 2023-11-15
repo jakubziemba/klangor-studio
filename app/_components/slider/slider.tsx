@@ -48,6 +48,8 @@ export default function Slider() {
               src={images[current]}
               alt="Project 1"
               fill
+              priority
+              loading="eager"
               sizes="100vw"
               style={{
                 objectFit: "cover",
