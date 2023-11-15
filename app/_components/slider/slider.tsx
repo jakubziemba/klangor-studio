@@ -58,23 +58,23 @@ export default function Slider() {
             transition={{
               ease: "easeInOut",
             }}
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: "100%" }}
             animate={{
               opacity: 1,
-              y: 0,
+              y: "0%",
               transition: {
-                y: { type: "spring", bounce: 0, duration: 0.7 },
+                y: { type: "spring", bounce: 0, duration: 0.67 },
                 opacity: { duration: 0.4 },
                 delay: introEnded ? 0 : 2.8,
               },
             }}
             exit={{
               opacity: 0,
-              y: 50,
+              y: "100%",
               transition: {
                 delay: 0,
-                opacity: { duration: 0.3 },
-                y: { duration: 0.5, ease: "backOut" },
+                opacity: { duration: 0.4 },
+                y: { duration: 0.4, ease: "backOut" },
               },
             }}
           >
