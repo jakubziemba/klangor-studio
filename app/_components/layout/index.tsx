@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
-import Nav from '@/app/_components/nav';
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+import Nav from "@/app/_components/nav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      {/* <Nav /> */}
+      <Nav />
       {children}
     </div>
   );
