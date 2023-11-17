@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Layout from "./_components/layout";
 
-const poppins = Poppins({
+const manrope = Manrope({
   display: "swap",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body className={`${manrope.className}`}>
         <Layout>{children}</Layout>
       </body>
     </html>

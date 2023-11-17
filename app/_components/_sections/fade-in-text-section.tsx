@@ -22,7 +22,7 @@ export default function FadeInTextSection() {
         start: container.current?.["offsetTop"] * 0.25,
         end:
           container?.current?.["offsetTop"] -
-          container?.current?.["offsetHeight"] * 0.75,
+          container?.current?.["offsetHeight"] * 0.85,
       },
       opacity: 1,
       ease: "none",
@@ -68,7 +68,7 @@ export default function FadeInTextSection() {
   };
 
   return (
-    <section ref={container} className="flex items-center justify-center py-16">
+    <section ref={container} className="flex items-center px-12 py-16">
       <div
         ref={body}
         className="text-k-black flex h-min w-[90%] flex-wrap leading-normal"

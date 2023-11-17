@@ -1,24 +1,22 @@
-// import Image from "next/image";
 import Logo from "./logo";
 
 const links = [
   { path: "/", label: "Projekty" },
-  { path: "/pracownia", label: "Pracownia" },
-  { path: "/zespol", label: "Zespół" },
+  { path: "/o-nas", label: "O nas" },
   { path: "/kontakt", label: "Kontakt" },
 ];
 
 export default function Nav() {
   return (
     <header className="fixed left-0 right-0 top-0 z-10 text-white mix-blend-difference">
-      <div className="flex items-center justify-between lg:px-6 lg:py-2">
-        <a href="/">
+      <div className="lg:grid-desktop flex items-center justify-between lg:px-6 lg:py-2">
+        <a href="/" className="lg:col-start-1">
           <Logo className="h-auto w-48" />
         </a>
-        <nav className="">
-          <ul className="flex list-none gap-x-4 text-base font-light">
-            {links.map(({ label, path }) => (
-              <li key={label}>
+        <nav className="lg:col-start-4 lg:col-end-7">
+          <ul className="list-none text-xl font-regular tracking-wide lg:grid lg:grid-cols-3 lg:gap-5">
+            {links.map(({ label, path }, index) => (
+              <li key={label} className={`lg:col-start-${index + 1}`}>
                 <a href={path}>{label}</a>
               </li>
             ))}
