@@ -19,14 +19,14 @@ export default function FadeInTextSection() {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: container.current?.["offsetTop"] * 0.2,
+        start: container.current?.["offsetTop"] * 0.25,
         end:
           container?.current?.["offsetTop"] -
-          container?.current?.["offsetHeight"] * 0.8,
+          container?.current?.["offsetHeight"] * 0.75,
       },
       opacity: 1,
       ease: "none",
-      stagger: 0.2,
+      stagger: 0.1,
     });
   }
 
