@@ -13,14 +13,16 @@ export default function FadeInTextSection() {
   const container = useRef(null);
 
   function createAnimation() {
+    if (container.current === null) return;
+
     return gsap.to(refs.current, {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: container?.current?.offsetTop * 0.2,
+        start: container.current?.["offsetTop"] * 0.2,
         end:
-          container?.current?.offsetTop -
-          container?.current?.offsetHeight * 0.8,
+          container?.current?.["offsetTop"] -
+          container?.current?.["offsetHeight"] * 0.8,
       },
       opacity: 1,
       ease: "none",
