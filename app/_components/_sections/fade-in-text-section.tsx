@@ -19,10 +19,8 @@ export default function FadeInTextSection() {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: container.current?.["offsetTop"] * 0.25,
-        end:
-          container?.current?.["offsetTop"] -
-          container?.current?.["offsetHeight"] * 0.85,
+        start: "top 80%",
+        end: "+=500",
       },
       opacity: 1,
       ease: "none",
