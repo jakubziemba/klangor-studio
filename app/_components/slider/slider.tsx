@@ -108,7 +108,7 @@ export default function Slider() {
               className="relative left-0 top-1/2 flex -translate-y-1/2 items-center overflow-hidden lg:col-start-1 lg:col-end-7"
             >
               <motion.h1
-                className="text-5xl text-white"
+                className="text-3xl text-white lg:text-5xl"
                 initial={{ y: "50%", opacity: 0 }}
                 animate={{
                   opacity: 1,
