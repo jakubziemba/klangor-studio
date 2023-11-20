@@ -8,10 +8,10 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-10 text-white mix-blend-difference">
+    <header className="sticky left-0 right-0 top-0 z-10 -mb-[75px] h-[75px] text-white mix-blend-difference">
       <div className="lg:grid-desktop flex items-center justify-between lg:px-6 lg:py-2">
         <a href="/" className="lg:col-start-1">
-          <Logo className="h-auto w-48" />
+          <Logo className="h-auto w-auto" />
         </a>
         <nav className="lg:col-start-4 lg:col-end-7">
           <ul className="list-none text-xl font-regular tracking-wide lg:grid lg:grid-cols-3 lg:gap-5">
