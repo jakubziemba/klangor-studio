@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import Layout from "./_components/layout";
+import Layout from "./_components/_layout";
 
 const manrope = Manrope({
   display: "swap",
