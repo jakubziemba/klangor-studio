@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, MotionConfig, spring } from "framer-motion";
 import SliderButtonSVG from "./slider-button-svg";
@@ -36,6 +36,15 @@ const projects = [
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((current) =>
+        current === projects.length - 1 ? 0 : current + 1,
+      );
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [current]);
 
   const nextSlide = () => {
     setCurrent(current === projects.length - 1 ? 0 : current + 1);
