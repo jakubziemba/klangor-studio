@@ -1,8 +1,8 @@
 type Props = {
-  className: string;
+  className?: string;
 };
 
-export default function Logo({ className }: Props) {
+export default function Logo({ className = "" }: Props) {
   return (
     <svg
       width="150"

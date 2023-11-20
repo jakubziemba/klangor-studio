@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, MotionConfig, spring } from "framer-motion";
-import SliderButtonSVG from "./slider-button-svg";
+import ArrowButtonSVG from "../arrow-button-svg";
 
 const projects = [
   {
@@ -140,10 +140,10 @@ export default function Slider() {
             className="flex gap-3 lg:col-start-8 lg:col-end-9"
           >
             <button className=" text-white" onClick={prevSlide}>
-              <SliderButtonSVG />
+              <ArrowButtonSVG />
             </button>
             <button className="text-white" onClick={nextSlide}>
-              <SliderButtonSVG className="rotate-180" />
+              <ArrowButtonSVG className="rotate-180" />
             </button>
           </motion.div>
         </motion.div>
