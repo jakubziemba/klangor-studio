@@ -19,10 +19,8 @@ export default function FadeInTextSection() {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: container.current?.["offsetTop"] * 0.25,
-        end:
-          container?.current?.["offsetTop"] -
-          container?.current?.["offsetHeight"] * 0.75,
+        start: "top 80%",
+        end: "+=500",
       },
       opacity: 1,
       ease: "none",
@@ -68,7 +66,7 @@ export default function FadeInTextSection() {
   };
 
   return (
-    <section ref={container} className="flex items-center justify-center py-16">
+    <section ref={container} className="flex items-center px-12 py-16">
       <div
         ref={body}
         className="text-k-black flex h-min w-[90%] flex-wrap leading-normal"
