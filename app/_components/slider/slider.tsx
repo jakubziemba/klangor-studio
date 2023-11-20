@@ -92,7 +92,14 @@ export default function Slider() {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div className="lg:grid-desktop lg:content absolute bottom-0 left-0 right-0 h-24 bg-opacity-70 bg-gradient-to-t from-black from-[-20%] to-transparent to-[80%] mix-blend-difference lg:px-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 0.28, ease: [0.33, 1, 0.68, 1] },
+          }}
+          className="lg:grid-desktop lg:content absolute bottom-0 left-0 right-0 h-24 bg-opacity-70 bg-gradient-to-t from-black from-[-20%] to-transparent to-[80%] mix-blend-difference lg:px-12"
+        >
           <AnimatePresence mode="wait">
             <motion.span
               key={current}
