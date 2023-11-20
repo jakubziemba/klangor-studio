@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-gap: 20px;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,5 +26,9 @@
 
 body {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.5;
 }
