@@ -50,9 +50,16 @@ export default function Slider() {
       <MotionConfig transition={{ type: "spring", bounce: 0 }}>
         <motion.div
           className="flex flex-row"
+          initial={{ opacity: 0 }}
           animate={{
+            opacity: 1,
             x: `-${current * 100}%`,
-            transition: { type: "spring", bounce: 0, duration: 0.6 },
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.6,
+              opacity: { duration: 0.2 },
+            },
           }}
         >
           {projects.map(({ id, title, src }, index) => (
@@ -104,9 +111,9 @@ export default function Slider() {
                 }}
                 exit={{
                   opacity: 0,
-                  y: "50%",
+                  y: "-30%",
                   transition: {
-                    duration: 0.16,
+                    duration: 0.2,
                     ease: [0.33, 1, 0.68, 1],
                   },
                 }}
