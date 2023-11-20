@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import Nav from "@/app/_components/nav";
+import Footer from "./footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Nav />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

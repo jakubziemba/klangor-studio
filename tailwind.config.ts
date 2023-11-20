@@ -1,3 +1,5 @@
+/** @type {import('tailwindcss').Config} */
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -6,28 +8,26 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    fontWeight: {
-      light: "300",
-      regular: "400",
-      medium: "500",
-    },
-  },
   extend: {
     theme: {
+      fontWeight: {
+        light: "300",
+        regular: "400",
+        medium: "500",
+      },
+      colors: {
+        "k-black": "#000",
+        "k-orange": "#F0662E",
+        "k-gray": "#B3B5B0",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors: {
-        "k-black": "#000",
-        white: "#fff",
-        orange: "#F0662E",
-        "k-gray": "#B3B5B0",
-      },
     },
   },
   plugins: [],
 };
-export default config;
+
+module.exports = config;

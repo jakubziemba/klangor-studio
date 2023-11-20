@@ -2,7 +2,7 @@ type Props = {
   className?: string;
 };
 
-export default function SliderButtonSVG({ className }: Props) {
+export default function ArrowButtonSVG({ className = "" }: Props) {
   return (
     <svg
       width="38"
