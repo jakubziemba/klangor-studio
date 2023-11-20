@@ -14,9 +14,14 @@ export default function Nav() {
           <Logo className="h-auto w-auto" />
         </a>
         <nav className="lg:col-start-4 lg:col-end-7">
-          <ul className="list-none text-xl font-regular tracking-wide lg:grid lg:grid-cols-3 lg:gap-5">
+          <ul className="list-none text-lg font-regular tracking-wide lg:grid lg:grid-cols-3 lg:gap-5">
             {links.map(({ label, path }, index) => (
-              <li key={label} className={`lg:col-start-${index + 1}`}>
+              <li
+                key={label}
+                className={`lg:col-start-${
+                  index + 1
+                } relative w-max after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:mix-blend-difference after:transition-all after:duration-300 after:ease-in-out hover:after:w-full`}
+              >
                 <a href={path}>{label}</a>
               </li>
             ))}
