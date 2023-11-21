@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
@@ -12,25 +12,26 @@ export default function FadeInTextSection() {
   const body = useRef(null);
   const container = useRef(null);
 
-  function createAnimation() {
+  useLayoutEffect(() => {
     if (container.current === null) return;
 
-    return gsap.to(refs.current, {
-      scrollTrigger: {
-        trigger: container.current,
-        scrub: true,
-        start: "top 80%",
-        end: "+=500",
-      },
-      opacity: 1,
-      ease: "none",
-      stagger: 0.1,
-    });
-  }
-
-  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    createAnimation();
+
+    let ctx = gsap.context(() => {
+      gsap.to(refs.current, {
+        scrollTrigger: {
+          trigger: container.current,
+          scrub: true,
+          start: () => "top 85%",
+          end: () => "+=650",
+        },
+        opacity: 1,
+        ease: "none",
+        stagger: 0.05,
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => ctx.revert(); // cleanup
   }, []);
 
   const splitWords = (phrase: string) => {
@@ -38,7 +39,7 @@ export default function FadeInTextSection() {
     phrase.split(" ").forEach((word, i) => {
       const letters = splitLetters(word);
       body.push(
-        <p key={word + "_" + i} className="m-[0.5vw] mr-[1.1vw] text-5xl">
+        <p key={word + "_" + i} className="m-[0.5vw] mr-[0.3vw] text-4xl">
           {letters}
         </p>,
       );
@@ -66,10 +67,10 @@ export default function FadeInTextSection() {
   };
 
   return (
-    <section ref={container} className="flex items-center px-12 py-16">
+    <section ref={container} className="grid-desktop items-center px-12 py-16">
       <div
         ref={body}
-        className="text-k-black flex h-min w-[90%] flex-wrap leading-normal"
+        className="text-k-black col-span-7 col-start-1 flex h-min w-[90%] flex-wrap leading-normal"
       >
         {splitWords(phrase)}
       </div>
