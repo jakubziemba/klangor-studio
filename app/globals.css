@@ -39,6 +39,7 @@
   --k-orange: #f0662e;
   --k-black: #000;
   --k-gray: #b3b5b0;
+  --k-lightgray: #f2f2f2;
 }
 
 @media (prefers-color-scheme: dark) {

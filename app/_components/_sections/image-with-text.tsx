@@ -9,6 +9,7 @@ export default function ImageWithText() {
           alt="Klangor Studio"
           fill
           className="object-cover object-center"
+          sizes="50vw"
         />
       </div>
       <div className="col-start-5 col-end-8 w-full self-center">

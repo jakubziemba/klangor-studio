@@ -67,7 +67,10 @@ export default function FadeInTextSection() {
   };
 
   return (
-    <section ref={container} className="grid-desktop items-center px-12 py-16">
+    <section
+      ref={container}
+      className="lg:grid-desktop items-center px-12 py-16"
+    >
       <div
         ref={body}
         className="col-span-7 col-start-1 flex h-min w-[90%] flex-wrap leading-normal text-k-black"
