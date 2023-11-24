@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import ArrowButtonSVG from "../arrow-button-svg";
-import { projects } from "./data";
+import { projects } from "../../../data/projects";
 
 type SliderOverlayProps = {
   current: number;

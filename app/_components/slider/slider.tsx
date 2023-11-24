@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, MotionConfig } from "framer-motion";
 import SliderOverlay from "./slider-overlay";
-import { projects } from "./data";
+import { projects } from "../../../data/projects";
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);

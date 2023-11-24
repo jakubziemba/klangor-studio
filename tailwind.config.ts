@@ -16,6 +16,7 @@ module.exports = {
         "k-black": "var(--k-black)",
         "k-orange": "var(--k-orange)",
         "k-gray": "var(--k-gray)",
+        "k-lightgray": "var(--k-lightgray)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
