@@ -72,7 +72,7 @@ export default function HomepageProjectsSlider() {
         ))}
         <SwiperButtons />
       </Swiper>
-      <div className="mt-16 flex justify-center">
+      <div className="my-16 flex justify-center">
         <Link
           href="/projekty"
           className="border border-k-orange bg-k-orange px-6 py-3 text-center text-base text-white transition-all hover:bg-transparent hover:text-k-orange"
