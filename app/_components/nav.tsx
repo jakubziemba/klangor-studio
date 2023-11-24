@@ -31,6 +31,7 @@ export default function Nav() {
     if (latest > target && ref.current !== null) {
       ref.current.style.background = "white";
       ref.current.style.color = "black";
+      ref.current.style.mixBlendMode = "normal";
       if (logoRef.current && latest > target) {
         svgPaths?.forEach((path) => {
           path.style.fill = "black";
@@ -40,6 +41,7 @@ export default function Nav() {
     if (latest < target && ref.current !== null) {
       ref.current && (ref.current.style.background = "transparent");
       ref.current && (ref.current.style.color = "white");
+      ref.current && (ref.current.style.mixBlendMode = "difference");
       svgPaths?.forEach((path) => {
         path.style.fill = "white";
       });
