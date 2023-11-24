@@ -13,7 +13,7 @@ export default function ImageWithText() {
         />
       </div>
       <div className="col-start-5 col-end-8 w-full self-center">
-        <p className="text-2xl leading-normal text-black xl:text-3xl xl:leading-normal">
+        <p className="text-2xl leading-normal text-black xl:text-3xl xl:leading-relaxed">
           Praca nad projektami ze szczególnym uwzględnieniem ich indywidualnego
           charakteru doprowadziła nas do wielu ciekawych projektów konkursowych
           i realizacyjnych.

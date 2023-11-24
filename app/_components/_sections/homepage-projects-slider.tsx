@@ -5,13 +5,15 @@ import Link from "next/link";
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 import clsx from "clsx";
 import ArrowButtonSVG from "../arrow-button-svg";
+import { useMediaQuery } from "usehooks-ts";
 import { projects } from "@/data/projects";
 
 // Import Swiper styles
 import "swiper/css";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function HomepageProjectsSlider() {
+  const isLargeScreen = useMediaQuery("(min-width: 1920px)");
   return (
     <div className="bg-k-lightgray pb-8">
       <Swiper
@@ -19,7 +21,7 @@ export default function HomepageProjectsSlider() {
         speed={500}
         parallax={true}
         allowSlidePrev={true}
-        spaceBetween={20}
+        spaceBetween={isLargeScreen ? 48 : 20}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
@@ -29,38 +31,40 @@ export default function HomepageProjectsSlider() {
         {projects.map(({ id, src, title }, index) => (
           <SwiperSlide
             key={id}
-            className="group aspect-square"
-            style={{ width: "60%", maxHeight: "600px" }}
+            className="group aspect-square hover:cursor-pointer"
+            style={{
+              width: "50%",
+              maxHeight: "600px",
+            }}
           >
             {({ isActive, isPrev, isNext }) => {
               return (
                 <>
                   <div
                     className={clsx(
-                      `relative inset-0 flex aspect-square h-full w-full origin-top flex-col overflow-hidden transition-all duration-500 ease-in-out`,
+                      `relative inset-0 flex h-full w-full origin-top flex-col overflow-hidden transition-all duration-500 ease-in-out`,
                       isPrev || isNext ? "scale-y-90" : "scale-y-100",
                       // "max-h-[80%]",
                     )}
                   >
                     <Image
                       src={src}
-                      width={800}
-                      height={800}
+                      fill
                       alt={title}
                       sizes="80vw"
                       className={clsx(
-                        "absolute inset-0 h-full w-full origin-center object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-[0.85]",
+                        "absolute inset-0 h-auto w-full origin-center object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-[0.85]",
                       )}
                     />
                   </div>
                   <SlideTitle title={title} />
 
-                  {/* <div
+                  <div
                     className={clsx(
-                      "mt-5 h-px w-[10%] bg-black opacity-0 transition-all duration-500 ease-in-out group-hover:w-full",
+                      "mt-5 h-px w-[10%] bg-k-orange opacity-0 transition-all duration-500 ease-in-out group-hover:w-[20%]",
                       isActive && "opacity-100",
                     )}
-                  ></div> */}
+                  ></div>
                 </>
               );
             }}
@@ -84,24 +88,6 @@ type SlideContentProps = {
   title: string;
 };
 
-function SlideContent({ src, title }: SlideContentProps) {
-  return (
-    <SwiperSlide className="group" style={{ width: "60%" }}>
-      <div className="relative inset-0 flex aspect-square h-full max-h-[600px] w-full flex-col">
-        <Image
-          src={src}
-          fill
-          alt={title}
-          sizes="80vw"
-          className="aspect-square h-full w-auto object-cover"
-        />
-      </div>
-      <SlideTitle title={title} />
-      <motion.div className="mt-5 h-px w-[10%] bg-black transition-all duration-500 group-hover:w-full"></motion.div>
-    </SwiperSlide>
-  );
-}
-
 type SlideTitleProps = {
   title: string;
 };
@@ -111,15 +97,21 @@ function SlideTitle({ title }: SlideTitleProps) {
 
   return (
     <motion.div
-      transition={{ type: "spring", stiffness: 300 }}
       initial={{ opacity: 0 }}
       animate={{
         opacity: swiperSlide.isActive ? 1 : 0,
+        transition: { duration: 0.1 },
       }}
       exit={{ opacity: 0 }}
       className="relative bottom-0 left-0 mt-5 w-full text-2xl"
     >
-      {title}
+      <motion.span
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        exit={{ y: 50, transition: { duration: 0.1 } }}
+      >
+        {title}
+      </motion.span>
     </motion.div>
   );
 }
