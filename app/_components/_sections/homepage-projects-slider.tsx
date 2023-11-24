@@ -61,7 +61,7 @@ export default function HomepageProjectsSlider() {
 
                   <div
                     className={clsx(
-                      "mt-5 h-px w-[10%] bg-k-orange opacity-0 transition-all duration-500 ease-in-out group-hover:w-[20%]",
+                      "mt-5 h-px w-[10%] bg-k-black opacity-0 transition-all duration-500 ease-in-out group-hover:w-[20%]",
                       isActive && "opacity-100",
                     )}
                   ></div>
@@ -75,7 +75,7 @@ export default function HomepageProjectsSlider() {
       <div className="mt-16 flex justify-center">
         <Link
           href="/projekty"
-          className="border border-k-orange bg-k-orange px-6 py-3 text-center text-base text-k-black text-white transition-all hover:bg-transparent hover:text-k-orange"
+          className="border border-k-orange bg-k-orange px-6 py-3 text-center text-base text-white transition-all hover:bg-transparent hover:text-k-orange"
         >
           Zobacz wszystkie projekty
         </Link>
