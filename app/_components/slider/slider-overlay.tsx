@@ -1,11 +1,25 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ArrowButtonSVG from "../arrow-button-svg";
 import { projects } from "../../../data/projects";
 
 type SliderOverlayProps = {
   current: number;
   setCurrent: (current: number) => void;
+};
+
+const buttonHover = {
+  scale: 1.05,
+  transition: {
+    duration: 0.2,
+  },
+};
+
+const buttonClick = {
+  scale: 0.95,
+  transition: {
+    duration: 0.2,
+  },
 };
 
 export default function SliderOverlay({
@@ -28,44 +42,6 @@ export default function SliderOverlay({
       }}
       className="lg:grid-desktop lg:content absolute bottom-0 left-0 right-0 h-24 bg-opacity-70 bg-gradient-to-t from-black from-[-20%] to-transparent to-[80%] mix-blend-difference lg:px-12"
     >
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={current}
-          transition={{ duration: 0.28, ease: [0.33, 1, 0.68, 1] }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 0.2,
-            },
-          }}
-          className="relative left-0 top-1/2 flex -translate-y-1/2 items-center overflow-hidden lg:col-start-1 lg:col-end-7"
-        >
-          <motion.h1
-            className="text-3xl text-white lg:text-4xl"
-            initial={{ y: "50%", opacity: 0 }}
-            animate={{
-              opacity: 1,
-              y: "0%",
-              transition: {
-                duration: 0.28,
-                ease: [0.33, 1, 0.68, 1],
-              },
-            }}
-            exit={{
-              opacity: 0,
-              y: "-30%",
-              transition: {
-                duration: 0.2,
-                ease: [0.33, 1, 0.68, 1],
-              },
-            }}
-          >
-            {projects[current].title}
-          </motion.h1>
-        </motion.span>
-      </AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -74,12 +50,22 @@ export default function SliderOverlay({
         }}
         className="flex gap-3 lg:col-start-8 lg:col-end-9"
       >
-        <button className=" text-white" onClick={prevSlide}>
+        <motion.button
+          className="text-white"
+          onClick={prevSlide}
+          whileHover={buttonHover}
+          whileTap={buttonClick}
+        >
           <ArrowButtonSVG />
-        </button>
-        <button className="text-white" onClick={nextSlide}>
+        </motion.button>
+        <motion.button
+          className="text-white"
+          onClick={nextSlide}
+          whileHover={buttonHover}
+          whileTap={buttonClick}
+        >
           <ArrowButtonSVG className="rotate-180" />
-        </button>
+        </motion.button>
       </motion.div>
     </motion.div>
   );
