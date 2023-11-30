@@ -39,7 +39,7 @@ export default function FadeInTextSection() {
     phrase.split(" ").forEach((word, i) => {
       const letters = splitLetters(word);
       body.push(
-        <p key={word + "_" + i} className="m-[0.5vw] mr-[0.3vw] text-4xl">
+        <p key={word + "_" + i} className="m-[0.5vw] mr-[0.1vw] text-4xl">
           {letters}
         </p>,
       );

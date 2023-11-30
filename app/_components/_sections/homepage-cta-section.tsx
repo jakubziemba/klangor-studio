@@ -13,16 +13,18 @@ export default function HomepageCTASection() {
           className="absolute inset-0 object-cover object-[center_70%]"
         />
       </div>
-      <div className="flex flex-col justify-center">
-        <h3 className="mb-12 text-4xl text-white">Zróbmy projekt razem</h3>
-        <p className="max-w-[800px] text-base font-regular leading-relaxed tracking-wide text-white xl:leading-relaxed">
+      <div className="lg:grid-desktop flex flex-col justify-center">
+        <h3 className="mb-12 text-5xl text-white lg:col-span-4 lg:col-start-1 lg:row-start-1">
+          Zróbmy projekt razem
+        </h3>
+        <p className="max-w-[800px] text-lg font-regular leading-relaxed tracking-wide text-white lg:col-span-4 lg:row-start-2 xl:leading-relaxed">
           Zawsze szukamy nowych możliwości a nasze projekty realizujemy na
           terenie całej Polski bez względu na dzielącą nas odległość. Skontaktuj
           się z nami w celu otrzymania oferty na projekt.
         </p>
         <Link
           href="/kontakt"
-          className="mt-8 w-max border border-white bg-white px-6 py-3 text-base transition-all duration-200 hover:bg-transparent hover:text-white "
+          className="mt-8 w-max border border-white bg-white px-6 py-3 text-base text-k-black transition-all duration-200 hover:bg-transparent hover:text-white lg:row-start-3"
         >
           Skontaktuj się z nami
         </Link>

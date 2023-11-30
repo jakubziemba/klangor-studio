@@ -70,7 +70,7 @@ export default function HomepageProjectsSlider() {
             }}
           </SwiperSlide>
         ))}
-        <SwiperButtons />
+        <SliderButtons />
       </Swiper>
       <div className="my-16 flex justify-center">
         <Link
@@ -83,10 +83,6 @@ export default function HomepageProjectsSlider() {
     </div>
   );
 }
-type SlideContentProps = {
-  src: string;
-  title: string;
-};
 
 type SlideTitleProps = {
   title: string;
@@ -116,16 +112,20 @@ function SlideTitle({ title }: SlideTitleProps) {
   );
 }
 
-function SwiperButtons() {
+function SliderButtons() {
   const swiper = useSwiper();
   return (
     <div className="mt-16 flex justify-center">
       <div className="flex gap-2">
         <button onClick={() => swiper.slidePrev()}>
-          <ArrowButtonSVG fill="var(--k-black)" />
+          <ArrowButtonSVG fill="var(--k-black)" hoverFill />
         </button>
         <button onClick={() => swiper.slideNext()}>
-          <ArrowButtonSVG className="-rotate-180" fill="var(--k-black)" />
+          <ArrowButtonSVG
+            className="-rotate-180"
+            fill="var(--k-black)"
+            hoverFill
+          />
         </button>
       </div>
     </div>
