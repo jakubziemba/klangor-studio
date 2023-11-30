@@ -1,4 +1,6 @@
 import FadeInTextSection from "./_components/_sections/fade-in-text-section";
+import HomepageCTASection from "./_components/_sections/homepage-cta-section";
+import HomepageProjectsSlider from "./_components/_sections/homepage-projects-slider";
 import ImageWithText from "./_components/_sections/image-with-text";
 import Slider from "./_components/slider/slider";
 
@@ -14,6 +16,8 @@ export default function Home() {
       <Slider />
       <FadeInTextSection />
       <ImageWithText />
+      <HomepageProjectsSlider />
+      <HomepageCTASection />
     </>
   );
 }

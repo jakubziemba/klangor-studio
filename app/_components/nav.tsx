@@ -11,7 +11,6 @@ const links = [
 ];
 
 export default function Nav() {
-  console.log("nav rendered");
   const ref = useRef<HTMLHeadElement>(null);
   const logoRef = useRef<SVGSVGElement>(null);
   const { scrollY } = useScroll();
@@ -32,6 +31,7 @@ export default function Nav() {
     if (latest > target && ref.current !== null) {
       ref.current.style.background = "white";
       ref.current.style.color = "black";
+      ref.current.style.mixBlendMode = "normal";
       if (logoRef.current && latest > target) {
         svgPaths?.forEach((path) => {
           path.style.fill = "black";
@@ -41,6 +41,7 @@ export default function Nav() {
     if (latest < target && ref.current !== null) {
       ref.current && (ref.current.style.background = "transparent");
       ref.current && (ref.current.style.color = "white");
+      ref.current && (ref.current.style.mixBlendMode = "difference");
       svgPaths?.forEach((path) => {
         path.style.fill = "white";
       });
@@ -50,9 +51,9 @@ export default function Nav() {
   return (
     <header
       ref={ref}
-      className={`-mb-nav-height h-nav-height font-regular nav-mask sticky left-0 right-0 top-0 z-10 flex items-center bg-transparent text-white mix-blend-difference backdrop-blur-[2px] transition-[background] duration-200`}
+      className={`nav-mask sticky left-0 right-0 top-0 z-10 -mb-nav-height flex h-nav-height items-center bg-transparent font-regular text-white mix-blend-difference backdrop-blur-[2px] transition-[background] duration-200`}
     >
-      <div className="lg:grid-desktop flex items-center justify-between lg:px-6">
+      <div className="lg:grid-desktop flex w-full items-center justify-between lg:px-6">
         <a href="/" className="lg:col-start-1">
           <Logo logoRef={logoRef} className="h-auto w-auto" />
         </a>
