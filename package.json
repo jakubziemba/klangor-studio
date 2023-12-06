@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.19.0",
+    "@contentful/rich-text-types": "^16.3.0",
     "@studio-freight/lenis": "^1.0.27",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "clsx": "^2.0.0",
+    "contentful": "^10.6.14",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.5",
@@ -28,12 +31,12 @@
     "typescript": "5.2.2",
     "usehooks-ts": "^2.9.1"
   },
-  "main": "index.js",
-  "repository": "https://github.com/jakubziemba/klangor-studio.git",
-  "author": "Jakub Ziemba <ziemba.jak@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/jakubziemba/klangor-studio.git",
+  "author": "Jakub Ziemba <ziemba.jak@gmail.com>",
+  "license": "MIT"
 }

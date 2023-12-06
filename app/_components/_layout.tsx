@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main>{children}</main>
       <Footer />
     </>

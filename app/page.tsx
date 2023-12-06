@@ -1,8 +1,5 @@
-import FadeInTextSection from "./_components/_sections/fade-in-text-section";
-import HomepageCTASection from "./_components/_sections/homepage-cta-section";
-import HomepageProjectsSlider from "./_components/_sections/homepage-projects-slider";
-import ImageWithText from "./_components/_sections/image-with-text";
 import Slider from "./_components/slider/slider";
+import { getProjects } from "@/lib/getProjects";
 
 const metadata = {
   title: "Strona główna | Klangor Studio",
@@ -10,14 +7,18 @@ const metadata = {
     "Klangor Studio to biuro architektoniczne z siedzibą na warszawskim Powiślu, założone w 2021 roku.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
+  // console.log(projects);
   return (
-    <>
-      <Slider />
-      <FadeInTextSection />
+    <div>
+      Home
+      {/* <Slider /> */}
+      {/* <FadeInTextSection />
       <ImageWithText />
       <HomepageProjectsSlider />
-      <HomepageCTASection />
-    </>
+      <HomepageCTASection /> */}
+    </div>
   );
 }
