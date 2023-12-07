@@ -1,5 +1,5 @@
-import Slider from "./_components/slider/slider";
-import { getProjects } from "@/lib/getProjects";
+// import Slider from "./_components/slider/slider";
+import { getAllProjects } from "@/app/lib/api";
 
 const metadata = {
   title: "Strona główna | Klangor Studio",
@@ -8,7 +8,7 @@ const metadata = {
 };
 
 export default async function Home() {
-  const projects = await getProjects();
+  // const projects = await getProjects();
 
   // console.log(projects);
   return (
