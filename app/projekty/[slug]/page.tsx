@@ -1,5 +1,7 @@
 import { client } from "@/app/lib/client";
 
+// TODO: add metadata, display basic project info
+
 export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: "project" });
   const paths = res.items.map((item) => ({
@@ -7,6 +9,13 @@ export async function generateStaticParams() {
   }));
 
   return paths;
+}
+
+export function generateMetadata({ params }: any) {
+  return {
+    title: `Klangor Studio`,
+    description: `Klangor studio description`,
+  };
 }
 
 export default async function Page() {
