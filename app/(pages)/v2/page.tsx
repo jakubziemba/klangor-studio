@@ -1,4 +1,4 @@
-import Slider from "../_components/slider/slider";
+import Slider from "../../_components/slider/slider";
 
 const metadata = {
   title: "Strona główna | Klangor Studio",

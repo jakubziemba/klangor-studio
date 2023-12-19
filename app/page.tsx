@@ -1,4 +1,4 @@
-// import Slider from "./_components/slider/slider";
+import Slider from "./_components/slider/slider";
 import { getAllProjects } from "@/app/lib/api";
 
 const metadata = {
@@ -13,8 +13,7 @@ export default async function Home() {
   // console.log(projects);
   return (
     <div>
-      Home
-      {/* <Slider /> */}
+      <Slider />
       {/* <FadeInTextSection />
       <ImageWithText />
       <HomepageProjectsSlider />
