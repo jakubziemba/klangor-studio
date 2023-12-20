@@ -35,7 +35,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --nav-height: 60px;
+  --nav-height: 72px;
   --k-orange: #f0662e;
   --k-black: #171515;
   --k-gray: #b3b5b0;
@@ -53,6 +53,10 @@
 body {
   font-size: 24px;
   font-weight: 500;
+}
+
+main > section {
+  margin-top: var(--nav-height);
 }
 
 p {
