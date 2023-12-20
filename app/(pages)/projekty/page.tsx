@@ -16,8 +16,22 @@ export default async function Projekty() {
 
   console.log(projectsData);
   return (
-    <div className="flex flex-row flex-wrap">
-      <ProjectGallery projects={projects} />
-    </div>
+    <section>
+      <div className="mx-12 flex flex-row border-b border-k-gray py-16">
+        <h1 className="flex-1 text-6xl">Projekty</h1>
+        <p className="flex-1 font-light tracking-wide">
+          Przy realizacji naszych projektów kierujemy się syntetycznymi
+          analizami, z poszanowaniem idei, kultury, historii oraz kontekstu
+          miejsca. Te główne kryteria stanowią podstawę naszej pracy, w ramach
+          której staramy się odpowiedzieć na kluczowe pytania dotyczące relacji
+          między kosztami a efektywnością projektowanych obiektów. W naszym
+          podejściu łączymy tradycyjne rozwiązania z innowacyjnym podejściem,
+          wprowadzając nowoczesne rozwiązania techniczne i metody projektowe.
+        </p>
+      </div>
+      <div className="px-12 pb-12 pt-8">
+        <ProjectGallery projects={projects} />
+      </div>
+    </section>
   );
 }

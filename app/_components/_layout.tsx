@@ -6,20 +6,20 @@ import Nav from "@/app/_components/nav";
 import Footer from "./footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf);
-  }, []);
+  //   requestAnimationFrame(raf);
+  // }, []);
 
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <main>{children}</main>
       <Footer />
     </>

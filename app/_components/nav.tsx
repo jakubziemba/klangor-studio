@@ -5,7 +5,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Logo from "./logo";
 
 const links = [
-  { path: "/", label: "Projekty" },
+  { path: "/projekty", label: "Projekty" },
   { path: "/o-nas", label: "O nas" },
   { path: "/kontakt", label: "Kontakt" },
 ];
@@ -15,49 +15,52 @@ export default function Nav() {
   const logoRef = useRef<SVGSVGElement>(null);
   const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const main = document.querySelector("main");
-    const firstSection = main?.children[0];
-    const firstSectionHeight = firstSection?.clientHeight;
-    const header = document.querySelector("header");
-    const headerHeight = header?.clientHeight;
-    const svgPaths = logoRef.current?.querySelectorAll("path");
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   const main = document.querySelector("main");
+  //   const firstSection = main?.children[0];
+  //   const firstSectionHeight = firstSection?.clientHeight;
+  //   const header = document.querySelector("header");
+  //   const headerHeight = header?.clientHeight;
+  //   const svgPaths = logoRef.current?.querySelectorAll("path");
 
-    if (!headerHeight || !firstSectionHeight) return;
+  //   if (!headerHeight || !firstSectionHeight) return;
 
-    const target =
-      firstSectionHeight - (headerHeight !== undefined ? headerHeight / 2 : 0);
+  //   const target =
+  //     firstSectionHeight - (headerHeight !== undefined ? headerHeight / 2 : 0);
 
-    if (latest > target && ref.current !== null) {
-      ref.current.style.background = "white";
-      ref.current.style.color = "black";
-      ref.current.style.mixBlendMode = "normal";
-      if (logoRef.current && latest > target) {
-        svgPaths?.forEach((path) => {
-          path.style.fill = "black";
-        });
-      }
-    }
-    if (latest < target && ref.current !== null) {
-      ref.current && (ref.current.style.background = "transparent");
-      ref.current && (ref.current.style.color = "white");
-      ref.current && (ref.current.style.mixBlendMode = "difference");
-      svgPaths?.forEach((path) => {
-        path.style.fill = "white";
-      });
-    }
-  });
+  //   if (latest > target && ref.current !== null) {
+  //     ref.current.style.background = "white";
+  //     ref.current.style.color = "black";
+  //     ref.current.style.mixBlendMode = "normal";
+  //     if (logoRef.current && latest > target) {
+  //       svgPaths?.forEach((path) => {
+  //         path.style.fill = "black";
+  //       });
+  //     }
+  //   }
+  //   if (latest < target && ref.current !== null) {
+  //     ref.current && (ref.current.style.background = "transparent");
+  //     ref.current && (ref.current.style.color = "white");
+  //     ref.current && (ref.current.style.mixBlendMode = "difference");
+  //     svgPaths?.forEach((path) => {
+  //       path.style.fill = "white";
+  //     });
+  //   }
+  // });
 
   return (
     <header
       ref={ref}
-      className={`nav-mask sticky left-0 right-0 top-0 z-10 -mb-nav-height flex h-nav-height items-center bg-transparent font-regular text-white mix-blend-difference backdrop-blur-[2px] transition-[background] duration-200`}
+      className={`nav-mask sticky left-0 right-0 top-0 z-10 -mb-nav-height flex h-nav-height items-center bg-white font-regular text-white backdrop-blur-[2px] transition-[background] duration-200`}
     >
-      <div className="lg:grid-desktop flex w-full items-center justify-between lg:px-6">
+      <div className="lg:grid-desktop flex h-full w-full items-center justify-between border-b border-k-gray lg:mx-12">
         <a href="/" className="lg:col-start-1">
-          <Logo logoRef={logoRef} className="h-auto w-auto" />
+          <Logo
+            logoRef={logoRef}
+            className="ml-[-12px] h-auto w-auto mix-blend-difference"
+          />
         </a>
-        <nav className="lg:col-start-4 lg:col-end-7">
+        <nav className="mix-blend-difference lg:col-start-4 lg:col-end-7">
           <ul className="list-none text-sm font-medium tracking-wide lg:grid lg:grid-cols-3 lg:gap-5">
             {links.map(({ label, path }, index) => (
               <li
